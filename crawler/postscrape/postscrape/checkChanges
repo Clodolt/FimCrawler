@@ -1,0 +1,34 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="93.177.66.153",
+    user="remote",
+    passwd="ShadySandro#69",
+    database="webcrawler"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("""SELECT * FROM quellen;""")
+quelle = mycursor.fetchall()
+
+for row in quelle:
+    print("Name = ", row[0], )
+    print("Link = ", row[1])
+    print("Volume = ", row[2])
+    print("Issue  = ", row[3])
+    print("IssOld  = ", row[4])
+    print("Date  = ", row[5])
+    print("checkDate  = ", row[6], "\n")
+
+    if row[3] != row[4]:
+        print(row[3] + row[4])
+        sql = "UPDATE quellen SET changed = 'true' WHERE name = %s"
+        mycursor.execute(sql, (row[0], ))
+        mydb.commit()
+        val = ("Valley 345", "Canyon 123")
+        print("Flagged! \n")
+
+
+
+print(mycursor.rowcount, "record(s) affected")

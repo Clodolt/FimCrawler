@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class=container-fluid">
+    <h2>Homepage</h2>
+    <h4>Willkommen, {% if user.is_authenticated %}{{ user.username}}{% else %}Besucher{% endif %}!</h4>
+    {% if user.is_authenticated %}
+    <br>
+    <h5>Gehen Sie auf "Journal Liste" um die aktuellen Ausgaben der Journals einzusehen.</h5>
+    <br>
+    <h5>Zusätzlich können Sie unter den Dropdown-Menü rechts oben die Einstellungen über den Newslettermail vornehmen.</h5>
+    <br>
+    <br>
+    <br>
+    <h5>Bei Fragen oder Problemen schicken Sie bitte eine Mail an Clodolt@gmx.de</h5>
+    {% else %}
+    <h5>Drücken Sie rechts oben auf Registrieren um regelmäßige E-Mails über Neuerscheinungen zu erhalten.</h5>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h5>Bei Fragen oder Problemen schicken Sie bitte eine Mail an Clodolt@gmx.de</h5>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block content %}
+<table class="table table-striped table-hover mb-5">
+  <thead class = "thead-light">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Aktuelle Ausgabe</th>
+    </tr>
+  </thead>
+    <tbody>
+    {% for journal in object_list%}
+    <tr>
+        <td><a href = {{ journal.link }}> {{ journal.name }} </a></td>
+        <td>{{ journal.issue }}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{% endblock %}
