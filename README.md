@@ -1,16 +1,16 @@
-#Pre-requisites
+## Pre-requisites
 
 Python version 3.8 or newer and mySql-dev header is required
 
 get both using "sudo apt-get install python3-dev default-libmysqlclient-dev build-essential"
 
 
-#Installation
+## Installation
 
-[Basics]
+# [Basics]
 A Python3 virtual environment is strongly recommended and needed
 
-[Database]
+# [Database]
 
 Edit the DATABASE in "settings.py" of the mysite folder to specify your database settings
 The project will create a Database with all the required Table for you the first time you run migrations
@@ -18,11 +18,11 @@ The project will create a Database with all the required Table for you the first
 A MySQL-Database was used for this application, the Database is included under "Database Dump" and can be imported into existing Servers if needed.
 
 
-[Email]
+# [Email]
 Any Email that can be used via SMTP is usable with the crawler. A functioning Googlemail account is currently being used, but can be changed in the 'sendMail.py' file
 
 
-[Webapp]
+# [Webapp]
 
 1. Extract the folder into your desired directory
 
@@ -39,7 +39,7 @@ Any Email that can be used via SMTP is usable with the crawler. A functioning Go
 7. Run "python3 manage.py runserver YOUR_DOMIAN_OR_IP:PORT" to start the webserver
 
 
-#Administration
+## Administration
 
 1. Run python3 manage.py createsuperuser to create and register a Superuser before starting the Webapp
 
@@ -49,15 +49,15 @@ Any Email that can be used via SMTP is usable with the crawler. A functioning Go
 
 
 
-#Usage
+## Usage
 
-[via Terminal]
+# [via Terminal]
 
 1. Crawl all the listed Websites by running "scrapy crawl combined" in the postscrapes folder via the terminal, the current issue will then be updated in the Database.
 
 2. Run the "FIM_newsletter.py" script via the terminal to send out an Email to every Email listed in the Database.
 
-[via Webapp]
+# [via Webapp]
 
 1. Log-in using an Superuser account (refer to #Administration)
 
@@ -66,7 +66,7 @@ Any Email that can be used via SMTP is usable with the crawler. A functioning Go
 3. Choose your page and click the button to manually crawl/send out mails
 
 
-#Automation
+## Automation
 
 0. Visit https://crontab.guru/ to find a suitable schedule expression
 
